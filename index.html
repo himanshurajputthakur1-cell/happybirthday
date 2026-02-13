@@ -16,7 +16,7 @@
     }
 
     body {
-      background: #ffdbd0;  /* soft peach base */
+      background: url('/HM/balun.jpg'); /* soft pink bokeh background */
       font-family: 'Cormorant Garamond', 'Times New Roman', serif;
       display: flex;
       justify-content: center;
@@ -33,7 +33,9 @@
     .mobile-center {
       max-width: 430px;
       width: 100%;
-      height: 100vh;          /* full screen */
+      height: 100vh;   
+             /* full screen */
+             background: url(/HM/balun.jpg);
       max-height: -webkit-fill-available;
       display: flex;
       flex-direction: column;
@@ -41,9 +43,9 @@
       align-items: center;    /* HORIZONTAL CENTER */
       position: relative;
       padding: 20px 20px;
-      background: rgba(255, 240, 235, 0.4);
+      /* background: rgba(255, 240, 235, 0.4); */
       backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      /* -webkit-backdrop-filter: blur(20px); */
       border-radius: 0;       /* full screen edge */
       box-shadow: none;
       overflow-y: hidden;     
@@ -51,13 +53,14 @@
 
     /* background floating soft shapes */
     .floating-bg {
+      background: url('/HM/balun.jpg');
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       z-index: -1;
-      background: linear-gradient(145deg, #ffeae3 0%, #ffded5 40%, #ffd6cc 100%);
+      /* background: linear-gradient(145deg, #ffeae3 0%, #ffded5 40%, #ffd6cc 100%); */
       overflow: hidden;
     }
 
@@ -112,6 +115,7 @@
     /* panda with bow – real PNG */
     .panda-img {
       width: 100%;
+      max-width: 150px;
       height: auto;
       image-rendering: auto;
       filter: drop-shadow(0 6px 12px rgba(255, 150, 130, 0.25));
@@ -119,6 +123,7 @@
     }
 
     .cake-mini {
+      /* width: 80%; */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -249,7 +254,7 @@
     .panda-hug { transform: scale(1.1); filter: drop-shadow(0 12px 18px #ffb0a0); transition: 0.35s; }
     .heart-throw {
       position: absolute; width: 20px; height: 20px;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff8a80"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+      background: url('/HM/balun.jpg');
       background-size: contain; opacity: 0; animation: throwHeart 2s infinite; pointer-events: none;
     }
   </style>
@@ -274,12 +279,14 @@
 
       <!-- panda + cake grouped slightly below, but main text centered in flow -->
       <div class="panda-cake-group">
-        <!-- panda with bow real PNG -->
-        <img src="hq720.jpg" alt="panda with bow" class="panda-img" id="panda">
-        
-        <!-- cake + candles mini version -->
-        <!-- <div class="cake-mini" id="cakeSceneMini">
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAAAXNSR0IArs4c6QAAB5hJREFUeJztnXmMFVUYh79iRESDCwgiBhVU1KiJxhhNjDEFo4mJGjVqXNDExLgvoHGJGxq3aFyjUaPxh0aNGjfGNS5xj2tcIuqPGjXGuCURNS4IoggiLv2jT2t6ps/d7syde8+Z+ZLJTd+tr3u+OvfUqXPeM0OHDjUhCEEIQhCCEIQgBCEIQQhCEIIQhCAEIQhBCEIQghCEIAQhqDWfGzQolR1m2rRp8Y8h7wcffDA/Z86c/OzZs3MaM9p0yJgxY/Il/6y0adOm+VmzZuW16A5BfwQhCEFtyCGHHJJvaGjI/+9//zPDhg1zY6211nJ+3nrrLdPU1GTGjx9vtt12W7t+6tSppqmpyUyZMsVMmzbNjBs3znV4xRVXmE6dOjlt3bp1s32//PJLp4/Ynj59utl1112d/jvuuMOst956Tt9dd93l1i9atMiMHDnS6dt9991dX+eff75bP2HCBLs+fAn4EcA888wzpqOjw7z66qtm0qRJbuzAgQPNyJEjzfrrr+98vPfee+bjjz92frp162Z23nlns9Zaa9k2jz/+uPn+++/t/5EjR5q9997b9O7d23U+YcIEM3r0aLPTTjuZfv36ufX33nuv+fjjj20b33zzjVm+fLntG2z11Vc3++67r+nZs6ddN2XKFDNp0iS7btGiRWbmzJmmu7f8m2++MR9++KH1I4CHAG6++WYzZMgQM3/+fNO9e3fTo0cP27B48WLz3HPP2XWXXXaZ6dWrl1mwYIHp1auXad++vW2bNWuWef755+06BbMhW2yxhZk0aZKttU855RTz3HPPmT59+phBgwY5H++8846tW1ZddVUzcOBA8+OPP5oBAwaYlVZayba/++67ZtasWXbdhhtu6MYr8P1pmj17ttl9991tP7/88ov56aefzOqrr27be/ToYX7++Wez4oor2nUffPCB+eGHH2zbiBEjzMCBA82IESNM+/btzZAhQ8wPP/xgfvzxR9tHyN8wYcIEc8ABB5g5c+aYbbbZxsyfP9+0a9fO/Otf/zKrrrqqbT/iiCPM7NmzzSqrrGLmzJljOnfubFZZZRXbPmPGDDNv3jw7nj69e/c2K620kvPn65s4caI5+OCDzYwZM8zmm29uvvnmG9O5c2ezzTbb2L4mTZpkFy5caPr27WvGjx9vLr/8cjNixAgzfvx4M3DgQHt0//33N2uttZY59dRT7X7I+hsM3z/Dhg0zp5xyivnmm2/MVlttZb7//nvTqVMn23dTU5Nt++9//2u+//57M2zYMHPjjTeaLbbYwpxzzjnm3nvvtd9y+eWXm44dO5pLL73U1uM9e/bM+i6gHw8++KCZPHmyOeSQQ8wdd9xhevfubW666Sbz3HPPmX333dcceeSRZvLkydbI3H333ebiiy+2y/7772+OO+44u3z00Udm5ZVXNvvuu68d31dffWXatGmT9W1AP+6//35z9913m0MOOcS8++67ZtCgQebmm282J554onnyySfN5ptvbo488kjzzjvvmPXWW88sWbLEdOvWzT2+fv36mU6dOplrr73WjvHJJ58066+/fta3Af245557zP33329OOOEE8/7775sNNtjAnHbaaeass84yTz75pNl0003NQQcdZN555x2z/vrrmz///NN07tzZ/e/SpYv9RmeffbZ9tffee6854IADsr4N6Mc555xjVlhhBdOjRw9z2WWX2XlEp06dbFvXrl3t0rlzZ/Pnn3+abr4f1qWXXmrXVy2lSZMm5SdPnpxvbGzMNzQ0uF8t2rRpUz5+1uT27t07P2XKlLz6QhAi+IUPP/zQpG3btjW9e/c2y5cvN0uXLjVdunQxXbt2NQsWLDDt2rWz7e3btzc//vijbQ9BCL8dddRR5vTTTzd33323OfDAA83ZZ59tDjroIDN//nyz1lprmc6dO5uff/7Zzq8aGhrMggULbH9z5841ixcvNt26dTNdunSxbY2NjWbixInm119/tfMfVY2//vqr8+Pr8/0oOnbsaOfH8e9ffvlls3z5cttPrbHlllva/b/uuuvM5MmT7aN48eLFdr3mP+p1p59+ur1zLr30UjNp0iSzYMEC20cIoA4YMmSIvWD333+/2WWXXezj+4ADDjDHH3981m4LQYjg+eefNwceeKA5+eSTzZQpU8zy5cvNeeedZ7baaiv7uA6Bq2EDBgywd9OECRPsI/qss84yRx11lC2sQhCbAFhwwQUXmP32288uX3zxhVl55ZXN3nvvbe8kFmT8R8fE7RRCx44d7eP522+/tb9Yevb6CkFNw6GmTp1qOnXqZObMmWM23nhj+/iM5cI+ffqY2bNn21dZkOB2QUPw1ltvNfPnz7dzkl69etnXW1i4HpB99tnHzu9R1cJv+eWXX5pvv/3W3j1qI4IqRs+ePe1dLFeo2qFqplpDy7XXXpuv1uW2227L16o89dRTVfkJQhCCEIQgBCEIQQhCEIIQhCAEIQhBCEIQghCEIAQhqGZ99tln8U8IqhE/+eST+ZUrBFWNL1q0KP4JQa3K3Llz458QhCAEIQhBCEIQghCEoNbltttui39C8E9i6NCh8U8IQhCCEIQgBCEIQQhCEIIQhCAEIQhBCEIQghCEIAQhqGb9H3N4tSYPK15JAAAAAElFTkSuQmCC" alt="cake" class="cake-img-small" id="cakeImg"> -->
+        <!-- panda with bow real PNG - FIRST IMAGE -->
+        <!-- <img src="/HM/balun.jpg" alt="panda with bow" class="panda-img" id="panda">
+         -->
+        <!-- cake + candles mini version - SECOND IMAGE (the cake) -->
+        <div class="cake-mini" id="cakeSceneMini">
+          <img src="/HM/panda.jpg" 
+               onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><circle cx=\'50\' cy=\'50\' r=\'45\' fill=\'%23ffd9cc\'/><text x=\'30\' y=\'65\' font-size=\'40\' fill=\'%23ffaaa0\'>🎂</text></svg>'" 
+               alt="birthday cake" class="cake-img-small" id="cakeImg" style="width: 50%;">
           <div class="candles-group-mini" id="candlesMini">
             <div class="candle-mini"><div class="flame-mini" id="flameMini1"></div><div class="smoke-mini" id="smokeMini1"></div></div>
             <div class="candle-mini"><div class="flame-mini" id="flameMini2"></div><div class="smoke-mini" id="smokeMini2"></div></div>
@@ -307,7 +314,7 @@
   </div> <!-- end mobile-center -->
 
   <!-- AUDIOS -->
-  <audio id="bgMusic" loop preload="auto"><source src="https://www.fesliyanstudios.com/musicfiles/2021-07-07_-_Romantic_Dream_-_www.fesliyanstudios.com/15_Seconds.mp3" type="audio/mpeg"></audio>
+  <audio id="bgMusic" loop preload="auto"><source src="https://youtube.com/shorts/h_JkjgnQU48?si=XAtcZZpqI9wwGq1h" type="audio/mpeg"></audio>
   <audio id="typingSound" preload="auto"><source src="https://www.soundjay.com/misc/sounds/keyboard-typing-3.mp3" type="audio/mpeg"></audio>
   <audio id="blowSound" preload="auto"><source src="https://www.soundjay.com/misc/sounds/candle-blow-1.mp3" type="audio/mpeg"></audio>
   <audio id="fireworkSound" preload="auto"><source src="https://www.soundjay.com/misc/sounds/fireworks-exploding-2.mp3" type="audio/mpeg"></audio>
@@ -464,5 +471,4 @@
     })();
   </script>
 </body>
-
 </html>
